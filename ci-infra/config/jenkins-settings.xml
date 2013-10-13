@@ -1,0 +1,53 @@
+<settings>
+
+  <servers>
+    <server>
+       <id>celar.releases</id>
+       <username>admin</username>
+       <password>CHANGE_ME</password>
+    </server>
+    <server>
+       <id>celar.snapshots</id>
+       <username>admin</username>
+       <password>CHANGE_ME</password>
+    </server>
+  </servers>
+
+  <profiles>
+    <profile>
+      <id>nexus-yum-repo-gen</id>
+      <activation>
+        <activeByDefault>true</activeByDefault> <!-- change this to false, if you don't like to have it on per default -->
+      </activation>
+      <properties>
+        <nexus.yum.repo.gen.username>yumrepobuilder</nexus.yum.repo.gen.username>
+        <nexus.yum.repo.gen.password>CHANGE_ME</nexus.yum.repo.gen.password>
+      </properties>
+    </profile>
+    <profile>
+      <id>celar-snapshots</id>
+      <activation>
+        <activeByDefault>true</activeByDefault> <!-- change this to false, if you don't like to have it on per default -->
+      </activation>
+      <repositories>
+        <repository>
+          <id>celar.snapshots</id>
+          <url>https://snf-153390.vm.okeanos.grnet.gr/nexus/content/repositories/snapshots</url>
+        </repository>
+      </repositories>
+    </profile>
+    <profile>
+      <id>celar-releases</id>
+      <activation>
+        <activeByDefault>true</activeByDefault> <!-- change this to false, if you don't like to have it on per default -->
+      </activation>
+      <repositories>
+        <repository>
+          <id>celar.releases</id>
+          <url>https://snf-153390.vm.okeanos.grnet.gr/nexus/content/repositories/releases</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+</settings>
